@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+@import "src/app/styles/mixins";
+
+.app-container {
+  min-height: 50rem;
+}
+
+.page-container {
+  padding: 2rem 4rem 4rem 4rem;
+
+  @include screen('desktop') {
+    padding: 1rem;
+  }
+
+  @include screen('tablet-landscape') {
+    padding: .75rem;
+  }
+  @include screen('phone') {
+    padding: .5rem;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+// Success button styling
+
+.mat-button.mat-success,
+.mat-stroked-button.mat-success {
+    color: $green;
+}
+.mat-button.mat-success:hover,
+.mat-stroked-button.mat-success:hover {
+  background-color: $light-green;
+}
+
+.mat-raised-button.mat-success,
+.mat-flat-button.mat-success,
+.mat-fab.mat-success,
+.mat-mini-fab.mat-success {
+  color: $light-green;
+  background-color: $green;
+}
+
+.mat-icon-button.mat-success {
+  color:$green;
+}
+
+.mat-button.mat-blue,
+.mat-stroked-button.mat-blue {
+    color: $dark-blue;
+}
+.mat-button.mat-blue:hover,
+.mat-stroked-button.mat-blue:hover {
+  background-color: $dark-blue;
+  color: $white;
+}
+
+.mat-raised-button.mat-blue,
+.mat-flat-button.mat-blue,
+.mat-fab.mat-blue,
+.mat-mini-fab.mat-blue {
+  color: $white;
+  background-color: $dark-blue;
+}
+
+.mat-icon-button.mat-blue {
+  color:$dark-blue;
+}
+
+// Success Chip styles
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-success {
+  color: $light-green;
+  background-color: $green;
+}
+
+.mat-chip.mat-success:hover {
+  background-color: $light-green;
+  color:$green;
+}

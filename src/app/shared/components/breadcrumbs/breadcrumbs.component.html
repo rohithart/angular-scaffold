@@ -1,0 +1,8 @@
+<ul class="breadcrumbs">
+  <li class="first"><a href="/" class="fas fa-home"></a>
+
+  <li *ngFor="let crumb of crumbs; let last = last" [ngClass]="{'last active': last}">
+    <a (click)="navigate(crumb.url)">{{crumb.name}}</a>
+  </li>
+
+</ul>

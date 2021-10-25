@@ -1,0 +1,16 @@
+<app-heading heading="Frequently asked questions"></app-heading>
+
+<app-breadcrumbs [crumbs]="crumbs"></app-breadcrumbs>
+
+<div class="page-container">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let question of questions; let i = index;">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{i+1}}. {{question?.question}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>{{question?.answer}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

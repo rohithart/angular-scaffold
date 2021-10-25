@@ -1,0 +1,24 @@
+{
+  "faq": [
+    {
+      "question": "What is Angular-Scaffold",
+      "answer": "Angular-Scaffold is a simple application, that can help you hit the ground and running."
+    },
+    {
+      "question": "how do I make profit?",
+      "answer": "I don't make any profit."
+    },
+    {
+      "question": "How much should I pay for this?",
+      "answer": "Nothing, absolutely free"
+    },
+    {
+      "question": "I think there is a feature that is missing or is required?",
+      "answer": "Let us know through the feedback section and help us add it for you."
+    },
+    {
+      "question": "I found a bug.",
+      "answer": "Let us know through the feedback section and help us fix it for you."
+    }
+  ]
+}

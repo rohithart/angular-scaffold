@@ -1,0 +1,114 @@
+@import "src/app/styles/mixins";
+
+@mixin inline {
+	display: inline-block;
+	zoom: 1;
+	vertical-align: top;
+}
+
+.breadcrumbs {
+	padding: 0px;
+	font-size: 0px;
+	line-height: 0px;
+	@include inline;
+	height: 40px;
+  margin-left: 2rem;
+
+  @include screen('phone') {
+    display: none;
+  }
+
+	li {
+		position: relative;
+		margin: 0px 0px;
+		padding: 0px;
+		list-style: none;
+		list-style-image: none;
+		@include inline;
+		border-left: 1px solid $primary--color;
+		transition: 0.3s ease;
+
+		&:hover {
+			&:before {
+				border-left: 10px solid $primary--color;
+			}
+
+			a {
+				color: $white;
+				background: $primary--color;
+			}
+
+		}
+
+		&:before {
+			content:"";
+			position: absolute;
+			right: -9px;
+			top: -1px;
+			z-index: 20;
+			border-left: 10px solid $white;
+			border-top: 22px solid transparent;
+			border-bottom: 22px solid transparent;
+			transition: 0.3s ease;
+		}
+
+		&:after {
+			content:"";
+			position: absolute;
+			right: -10px;
+			top: -1px;
+			z-index: 10;
+			border-left: 10px solid $primary--color;
+			border-top: 22px solid transparent;
+			border-bottom: 22px solid transparent;
+		}
+
+
+		&.active {
+
+			a {
+				color: $white;
+				background: $primary--color;
+			}
+		}
+
+		&.first {
+			border-left: none;
+
+			a {
+				font-size: 18px;
+				padding-left: 20px;
+				border-radius: 5px 0px 0px 5px;
+			}
+		}
+
+		&.last {
+
+			&:before {
+				display: none;
+			}
+			&:after {
+				display: none;
+			}
+
+			a {
+				padding-right: 20px;
+				border-radius: 0px 40px 40px 0px;
+			}
+		}
+
+		a {
+			display: block;
+			font-size: 12px;
+			line-height: 40px;
+			color: $primary--color;
+			padding: 0px 15px 0px 25px;
+			text-decoration: none;
+			background: $white;
+			border: 1px solid $primary--color;
+			white-space:nowrap;
+			overflow: hidden;
+			transition: 0.3s ease;
+		}
+	}
+}

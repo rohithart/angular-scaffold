@@ -1,0 +1,10 @@
+<div class="float-bar-container">
+  <div class="toggler">
+    <i class="fas fa-chevron-up" matTooltip="Collapse" matTooltipPosition="above" (click)="toggle()" *ngIf="open"></i>
+  </div>
+  <button mat-mini-fab color="success" aria-label="Open" matTooltip="Open" matTooltipPosition="left" *ngIf="!open" (click)="toggle()">
+    <i class="fas fa-chevron-down"></i>
+  </button>
+  <div class="float-bar-spacer" *ngIf="open"></div>
+  <ng-content *ngIf="open"></ng-content>
+</div>

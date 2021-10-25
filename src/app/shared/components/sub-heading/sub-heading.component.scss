@@ -1,0 +1,41 @@
+@import "src/app/styles/mixins";
+
+// .header {
+//   margin-bottom: 2rem;
+// }
+// .heading {
+//   color: $primary--color;
+//   text-align: center;
+//   font-size: 1.5rem;
+//   margin-bottom: .5rem;
+// }
+
+.heading p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: $primary--color;
+  padding-bottom: 5px;
+}
+
+.heading p:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: $primary--color;
+}
+.heading p:after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 10px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: $primary--color;
+}

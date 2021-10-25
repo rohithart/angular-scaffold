@@ -1,0 +1,56 @@
+<mat-toolbar class="nav-bar">
+  <button mat-button [mat-menu-trigger-for]="menu" fxShow fxHide.gt-sm>
+		<mat-icon>menu</mat-icon>
+	</button>
+	<a routerLink="/"><img src="assets/images/logo.svg" class="pic"  alt="profile picture"></a>
+  <div class="header-message">
+	  <a routerLink="/" class="app-name">Angular-Scaffold</a>
+    <span *ngIf="authService.user | async as user" class="welcome-message">Welcome {{ user.email }}</span>
+  </div>
+	<span class="fill-remaining-space"></span>
+
+	<div fxLayout="row" fxHide fxShow.gt-sm>
+    <div *ngIf="authService.user | async as user">
+      <a mat-button class="menu-button" *ngFor="let item of menuItems" routerLink="{{item.link}}">
+        <i class="{{item.icon}}"></i> {{item.name}}
+      </a>
+    </div>
+
+    <button mat-button class="menu-button" [matMenuTriggerFor]="defaultMenu">Other <i class="fas fa-chevron-down"></i></button>
+    <mat-menu #defaultMenu="matMenu">
+      <a mat-menu-item class="menu-item" *ngFor="let item of menuItemsDefault" routerLink="{{item.link}}">
+        <i class="{{item.icon}}"></i> {{item.name}}
+      </a>
+    </mat-menu>
+		<ng-container *ngIf="authService.isAuthenticated | async; else loggedOut">
+			<a mat-button class="menu-button" (click)="authService.logout()">
+				Log out
+			</a>
+		</ng-container>
+
+		<ng-template #loggedOut>
+		<a mat-button class="menu-button" (click)="authService.login()">Log in</a>
+		</ng-template>
+
+	</div>
+
+</mat-toolbar>
+<mat-menu x-position="before" #menu>
+  <div *ngIf="authService.user | async as user">
+    <a mat-menu-item class="menu-item" *ngFor="let item of menuItems" routerLink="{{item.link}}">
+      <i class="{{item.icon}}"></i> {{item.name}}
+    </a>
+  </div>
+  <a mat-menu-item class="menu-item" *ngFor="let item of menuItemsDefault" routerLink="{{item.link}}">
+		<i class="{{item.icon}}"></i> {{item.name}}
+	</a>
+	<ng-container *ngIf="authService.isAuthenticated | async; else loggedOut">
+		<a mat-button class="menu-item" (click)="authService.logout()">
+			Log out
+		</a>
+	</ng-container>
+
+	<ng-template #loggedOut>
+	<a mat-button class="menu-button" (click)="authService.login()">Log in</a>
+	</ng-template>
+</mat-menu>

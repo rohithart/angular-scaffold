@@ -1,0 +1,41 @@
+@import "src/app/styles/mixins";
+
+.float-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 8rem;
+  right: 5rem;
+  padding: .5rem;
+  background: $light-grey;
+  border: 1px solid $primary--color;
+  background: $dark-blue;
+  border-radius: 7px;
+  z-index: 999;
+
+  @include screen('phone') {
+    display: none;
+  }
+}
+
+.float-bar-spacer {
+  width: 3rem;
+  padding-top: 2rem;
+}
+
+.toggler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $white;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+::ng-deep .mat-mini-fab {
+  margin-bottom: .5rem;
+}

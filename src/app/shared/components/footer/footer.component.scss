@@ -1,0 +1,45 @@
+@import "src/app/styles/mixins";
+
+footer {
+  padding: calculateRem(8px) calculateRem(16px);
+  color: $white;
+  background: $primary--color;
+  margin-top: 2rem;
+  position: sticky;
+  top: 100%;
+  img {
+      width: 25%;
+  }
+}
+
+.footer-xs {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.footerBanner {
+  color: $white;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.footer-text {
+  display: inline;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--right {
+  text-align: right;
+}

@@ -1,0 +1,45 @@
+<app-heading heading="Get in touch with us."></app-heading>
+
+<app-breadcrumbs [crumbs]="crumbs"></app-breadcrumbs>
+
+<div class="page-container">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <form class="contact-form" [formGroup]="contactForm" #submitForm="ngForm" novalidate (ngSubmit)="sendContact(contactForm.value)">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input type="text" matInput formControlName="name" id="name" placeholder="John Smith">
+          <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+          <mat-error *ngIf="hasError('name', 'maxlength')">You have more than 60 characters</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" id="email" placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+          <mat-error *ngIf="hasError('email', 'email')">Please enter a valid email address</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Subject</mat-label>
+          <input matInput formControlName="subject" id="subject" placeholder="Subject">
+          <mat-error *ngIf="hasError('subject', 'required')">Subject is required</mat-error>
+          <mat-error *ngIf="hasError('subject', 'maxlength')">You have more than 1000 characters</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Let us know your voice.</mat-label>
+          <textarea matInput formControlName="message" id="message" placeholder="Let us know your voice"></textarea>
+          <mat-error *ngIf="hasError('message', 'required')">Message is required</mat-error>
+          <mat-error *ngIf="hasError('message', 'maxlength')">You have more than 1000 characters</mat-error>
+        </mat-form-field>
+
+        <mat-card-actions>
+          <button mat-raised-button color="primary" [disabled]="!contactForm.valid">Send</button>
+          <button type="button" mat-raised-button color="warn" (click)="reset()">Clear</button>
+        </mat-card-actions>
+      </form>
+
+    </div>
+  </div>
+</div>
